@@ -23,11 +23,6 @@ const Login: React.FC = () => {
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-          <IonButton routerLink="/it35-lab/app/home/details" expand="full">
-              Details
-          </IonButton>
-        </IonContent>
       <IonContent className='ion-padding'>
           <IonButton onClick={() => doLogin()} expand="full">
               Login
