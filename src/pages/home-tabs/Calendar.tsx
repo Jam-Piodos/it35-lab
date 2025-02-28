@@ -1,6 +1,7 @@
 import { 
   IonButtons,
     IonContent, 
+    IonDatetime, 
     IonHeader, 
     IonMenuButton, 
     IonPage, 
@@ -28,7 +29,9 @@ const Search: React.FC = () => {
             height: '100%',
           }}
         >
-          Calendar
+          <div>
+          <IonDatetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></IonDatetime>;
+          </div>
         </div>
 
       </IonContent>

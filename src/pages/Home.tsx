@@ -44,11 +44,11 @@ import Calendar from './home-tabs/Calendar';
           </IonTabBar>
         <IonRouterOutlet>
 
-          <Route exact path="/it35-lab/app/home/feed" render={Events} />
-          <Route exact path="/it35-lab/app/home/search" render={Calendar} />
+          <Route exact path="/it35-lab/app/home/events" render={Events} />
+          <Route exact path="/it35-lab/app/home/calendar" render={Calendar} />
 
           <Route exact path="/it35-lab/app/home">
-            <Redirect to="/it35-lab/app/home/feed" />
+            <Redirect to="/it35-lab/app/home/events" />
           </Route>
 
         </IonRouterOutlet>
