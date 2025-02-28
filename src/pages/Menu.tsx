@@ -13,7 +13,8 @@ import {
     IonRouterOutlet,
     IonSplitPane,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    useIonRouter
 } from '@ionic/react'
 import { homeOutline, logOutOutline, rocketOutline } from 'ionicons/icons';
 import { Redirect, Route } from 'react-router';
@@ -27,6 +28,10 @@ const Menu: React.FC = () => {
         { name: 'About', url: '/it35-lab/app/about', icon: rocketOutline },
     ]
     const [isOpen, setIsOpen] = useState(false);
+    const navigation = useIonRouter();
+    const doLogout = async () => {
+        navigation.push('/it35-lab/', 'back', 'replace');
+      }
 
     return (
         <IonPage>
@@ -50,31 +55,10 @@ const Menu: React.FC = () => {
                         ))}
 
                         {/*Logout Button*/}
-                        <IonButton routerLink="/it35-lab" routerDirection="back" expand="full">
-                            <IonIcon icon={logOutOutline} slot="start" id='logout-button'> </IonIcon>
+                        <IonButton expand="full" id='logout-button'>
+                            <IonIcon icon={logOutOutline} slot="start"> </IonIcon>
                             Logout
                         </IonButton>
-                        <IonAlert
-                            header="Alert!"
-                            trigger="present-alert"
-                            buttons={[
-                                {
-                                    text: 'Cancel',
-                                    role: 'cancel',
-                                    handler: () => {
-                                        console.log('Alert canceled');
-                                    },
-                                },
-                                {
-                                    text: 'OK',
-                                    role: 'confirm',
-                                    handler: () => {
-                                        console.log('Alert confirmed');
-                                    },
-                                },
-                            ]}
-                            onDidDismiss={({ detail }) => console.log(`Dismissed with role: ${detail.role}`)}
-                        ></IonAlert>
 
                     </IonContent>
                 </IonMenu>
@@ -87,6 +71,28 @@ const Menu: React.FC = () => {
                         <Redirect to="/it35-lab/app/home" />
                     </Route>
                 </IonRouterOutlet>
+
+                <IonAlert
+                            header="Alert!"
+                            trigger="logout-button"
+                            buttons={[
+                                {
+                                    text: 'Cancel',
+                                    role: 'cancel',
+                                    handler: () => {
+                                        console.log('Alert canceled');
+                                    },
+                                },
+                                {
+                                    text: 'Logout',
+                                    role: 'confirm',
+                                    handler: () => {
+                                        console.log('Alert confirmed');
+                                    },
+                                },
+                            ]}
+                            onDidDismiss={() => doLogout()}
+                        ></IonAlert>
 
             </IonSplitPane>
         </IonPage>
