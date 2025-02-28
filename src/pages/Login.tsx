@@ -1,9 +1,11 @@
 import { 
   IonAlert,
+  IonAvatar,
   IonButton,
   IonButtons,
     IonContent, 
     IonHeader, 
+    IonIcon, 
     IonInput, 
     IonInputPasswordToggle, 
     IonMenuButton, 
@@ -12,7 +14,7 @@ import {
     IonToolbar, 
     useIonRouter
 } from '@ionic/react';
-import { logoIonic, } from 'ionicons/icons';
+import { calendar, logoIonic, } from 'ionicons/icons';
 import { useState } from 'react';
 
   const Login: React.FC = () => {
@@ -31,10 +33,33 @@ import { useState } from 'react';
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Login</IonTitle>
+          <IonTitle>NBSC RCO Calendar</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
+      <IonAvatar
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '150px',
+                      height: '150px',
+                      borderRadius: '50%', 
+                      overflow: 'hidden' 
+                    }}
+                  >
+                    
+                     <IonIcon 
+                      icon={calendar}
+                      color='primary'
+                      style={{ fontSize: '120px', color: '#6c757d' }} 
+                    />
+                  </IonAvatar>
+                  <h1 style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}>LOGIN</h1>
       <IonInput
                     label="Email" 
                     labelPlacement="floating" 

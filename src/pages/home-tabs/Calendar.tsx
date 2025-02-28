@@ -16,7 +16,7 @@ const Search: React.FC = () => {
           <IonButtons slot='start'>
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>Search</IonTitle>
+          <IonTitle>Calendar</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -28,7 +28,7 @@ const Search: React.FC = () => {
             height: '100%',
           }}
         >
-          Search
+          Calendar
         </div>
 
       </IonContent>
