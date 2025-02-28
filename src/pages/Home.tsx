@@ -25,8 +25,8 @@ import Calendar from './home-tabs/Calendar';
   const Home: React.FC = () => {
 
     const tabs = [
-      {name:'Events', tab:'feed',url: '/it35-lab/app/home/events', icon: bookOutline},
-      {name:'Calendar', tab:'search', url: '/it35-lab/app/home/calendar', icon: calendar},
+      {name:'Events', tab:'events',url: '/it35-lab/app/home/events', icon: bookOutline},
+      {name:'Calendar', tab:'calendar', url: '/it35-lab/app/home/calendar', icon: calendar},
     ]
     
     return (
