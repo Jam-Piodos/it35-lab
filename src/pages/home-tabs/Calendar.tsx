@@ -1,4 +1,6 @@
 import { 
+  IonAlert,
+  IonButton,
   IonButtons,
     IonContent, 
     IonDatetime, 
@@ -30,9 +32,31 @@ const Search: React.FC = () => {
           }}
         >
           <div>
-          <IonDatetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></IonDatetime>;
+          <IonDatetime locale="en-GB-u-hc-h12"></IonDatetime>
+          <IonButton expand="full" id='add-event'>Add an event on this day</IonButton>
           </div>
         </div>
+
+        <IonAlert
+        trigger="add-event"
+        header="Please fill this infos"
+        buttons={['ADD EVENT']}
+        inputs={[
+          {
+            placeholder: 'Event Name',
+          },
+          {
+            type: 'number',
+            placeholder: 'Number of Expected Participants',
+            min: 1,
+            max: 100,
+          },
+          {
+            type: 'textarea',
+            placeholder: 'Short Description',
+          },
+        ]}
+      ></IonAlert>
 
       </IonContent>
     </IonPage>
