@@ -1,4 +1,5 @@
 import { 
+  IonAlert,
   IonButton,
     IonButtons,
       IonContent, 
@@ -21,6 +22,7 @@ import { Route, Redirect } from 'react-router';
 import Favorites from './home-tabs/Favorites';
 import Feed from './home-tabs/Feed';
 import Search from './home-tabs/Search';
+import { useState } from 'react';
   
   const Home: React.FC = () => {
 
